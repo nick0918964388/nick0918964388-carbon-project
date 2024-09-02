@@ -2,31 +2,99 @@
 
 .dashboard-container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
+  background-color: #f4f4f4; /* g100 背景色 */
+}
 
-  .side-nav {
-    width: 250px;
-    background-color: #f4f4f4;
-  }
+.main-content {
+  display: flex;
+  flex: 1;
+}
 
-  .content {
-    flex: 1;
-    padding: 16px;
-    background-color: #ffffff;
+.side-nav-container {
+  position: relative;
+  z-index: 1000;
+}
 
-    .chart-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 16px;
+.side-nav {
+  width: 256px; /* 側邊欄的寬度 */
+  background-color: #ece7e7;
+  color: #fff;
+}
 
-      .chart-column {
-        flex: 1;
-        margin-right: 16px;
+.content-wrapper {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 10px;
+  transition: margin-left 0.5s; /* 調整滑動速度 */
+  margin-top: 64px;
+}
 
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
+
+.content-wrapper.expanded {
+  margin-left: 256px; /* 展開時的左邊距 */
+}
+
+.content-wrapper:not(.expanded) {
+  margin-left: 30px; /* 縮小時的左邊距 */
+}
+
+.dashboard-grid {
+  display: flex;
+  flex: 1;
+  margin-left: -20px; /* 縮小時的左邊距 */
+  // margin-top: 30px;
+}
+
+.dashboard-grid.expanded {
+  margin-left: 256px; /* 展開時的左邊距 */
+}
+
+.main-content-column {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-bar select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.icon-library {
+  margin-top: 20px;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon-item p {
+  margin-left: 10px;
+}
+
+.tab-content {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

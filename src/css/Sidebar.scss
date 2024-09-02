@@ -1,0 +1,56 @@
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 55px; /* 縮小時的寬度，顯示圖示 */
+    transform: translateX(0);
+    transition: transform 0.5s, width 1.5s; /* 調整滑動速度 */
+    z-index: 1000; /* 確保側邊欄在最上層 */
+}
+
+.sidebar-container.expanded {
+    width: 256px; /* 展開時的寬度 */
+}
+
+.side-nav {
+    width: 100%;
+    background-color: #e64646;
+    color: #fff;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.dashboard-grid {
+    display: flex;
+    flex: 1;
+    transition: margin-left 1s; /* 調整滑動速度 */
+    margin-left: 64px; /* 縮小時的左邊距 */
+}
+
+.sidebar-container.expanded + .dashboard-grid {
+    margin-left: 256px; /* 展開時的左邊距 */
+}
+
+.titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    z-index: 1001; /* 確保 titlebar 在側邊欄之上 */
+}
+
+.titlebar h1 {
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
