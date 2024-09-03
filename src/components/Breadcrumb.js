@@ -10,8 +10,8 @@ export const DefaultBreadcrumb = () => (
       <a href="/">首頁</a>
     </BreadcrumbItem>
     <BreadcrumbItem href="/products">產品</BreadcrumbItem>
-    <BreadcrumbItem href="/products/electronics">電子產品</BreadcrumbItem>
-    <BreadcrumbItem isCurrentPage>智能手機</BreadcrumbItem>
+    {/* <BreadcrumbItem href="/products/electronics">電子產品</BreadcrumbItem>
+    <BreadcrumbItem isCurrentPage>智能手機</BreadcrumbItem> */}
   </Breadcrumb>
 );
 
