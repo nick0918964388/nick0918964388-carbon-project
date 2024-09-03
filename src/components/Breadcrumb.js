@@ -4,14 +4,14 @@ import '../css/Breadcrumb.scss';
 
 
 // 標準麵包屑導航
-export const DefaultBreadcrumb = () => (
+export const DefaultBreadcrumb = ({ selectedHeaderMenu }) => (
   <Breadcrumb>
     <BreadcrumbItem>
       <a href="/">首頁</a>
-    </BreadcrumbItem>
-    <BreadcrumbItem href="/products">產品</BreadcrumbItem>
-    {/* <BreadcrumbItem href="/products/electronics">電子產品</BreadcrumbItem>
-    <BreadcrumbItem isCurrentPage>智能手機</BreadcrumbItem> */}
+    </BreadcrumbItem>    
+    {selectedHeaderMenu && (
+      <BreadcrumbItem isCurrentPage>{selectedHeaderMenu}</BreadcrumbItem>
+    )}
   </Breadcrumb>
 );
 
