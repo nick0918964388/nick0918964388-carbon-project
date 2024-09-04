@@ -10,6 +10,7 @@
 .main-content {
   display: flex;
   flex: 1;
+  margin-right: 30px;
 }
 
 .side-nav-container {
@@ -24,7 +25,7 @@
 }
 
 .content-wrapper {
-  flex: 1;
+  // flex: 1;
   background-color: #f4f4f4;
   padding: 10px;
   transition: margin-left 0.5s; /* 調整滑動速度 */
@@ -36,16 +37,16 @@
   margin-left: 256px; /* 展開時的左邊距 */
 }
 
-.content-wrapper:not(.expanded) {
-  margin-left: 30px; /* 縮小時的左邊距 */
-}
+// .content-wrapper:not(.expanded) {
+//   margin-left: 30px; /* 縮小時的左邊距 */
+// }
 
-.dashboard-grid {
-  display: flex;
-  flex: 1;
-  margin-left: -20px; /* 縮小時的左邊距 */
-  // margin-top: 30px;
-}
+// .dashboard-grid {
+//   display: flex;
+//   flex: 1;
+//   margin-left: -20px; /* 縮小時的左邊距 */
+//   // margin-top: 30px;
+// }
 
 .dashboard-grid.expanded {
   margin-left: 256px; /* 展開時的左邊距 */
