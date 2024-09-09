@@ -36,40 +36,40 @@ export const HeadNavigation = ({ onMenuClick }) => {
       label: '溫室氣體',
       type: 'menu',
       items: [
-        { label: '溫室氣體管理', onClick: () => handleMenuItemClick('溫室氣體管理') }
+        { label: '溫室氣體管理', onClick: () => handleMenuItemClick('溫室氣體管理'), href: '/ghg' }
       ]
     },
-    { label: '能源管理', onClick: () => handleMenuItemClick('能源管理') },
-    { label: '水資源管理', onClick: () => handleMenuItemClick('水資源管理') },
-    { label: '零廢棄物', onClick: () => handleMenuItemClick('零廢棄物') },
-    { label: '空氣汙染防制', onClick: () => handleMenuItemClick('空氣汙染防制') },
+    { label: '能源管理', onClick: () => handleMenuItemClick('能源管理'), href: '/energy' },
+    { label: '水資源管理', onClick: () => handleMenuItemClick('水資源管理'), href: '/water' },
+    { label: '零廢棄物', onClick: () => handleMenuItemClick('零廢棄物'), href: '/waste' },
+    { label: '空氣汙染防制', onClick: () => handleMenuItemClick('空氣汙染防制'), href: '/air' },
     {
       label: '位置管理',
       type: 'menu',
       items: [
-        { label: '組織(L1)管理', onClick: () => handleMenuItemClick('組織(L1)管理') },
-        { label: '場區(L2)管理', onClick: () => handleMenuItemClick('場區(L2)管理') },
-        { label: '部門(L3)管理', onClick: () => handleMenuItemClick('部門(L3)管理') }
+        { label: '組織(L1)管理', onClick: () => handleMenuItemClick('組織(L1)管理'), href: '/l1org' },
+        { label: '場區(L2)管理', onClick: () => handleMenuItemClick('場區(L2)管理'), href: '/l2site' },
+        { label: '部門(L3)管理', onClick: () => handleMenuItemClick('部門(L3)管理'), href: '/l3org' }
       ]
     },
     {
       label: '設備/組件管理',
       type: 'menu',
       items: [
-        { label: '設備(L4)管理', onClick: () => handleMenuItemClick('設備(L4)管理') },
-        { label: '組件(L5)管理', onClick: () => handleMenuItemClick('組件(L5)管理') }
+        { label: '設備(L4)管理', onClick: () => handleMenuItemClick('設備(L4)管理'), href: '/l4device' },
+        { label: '組件(L5)管理', onClick: () => handleMenuItemClick('組件(L5)管理'), href: '/l5component' }
       ]
     },
-    { label: '分類管理', onClick: () => handleMenuItemClick('分類管理') },
+    { label: '分類管理', onClick: () => handleMenuItemClick('分類管理'), href: '/category' },
     {
       label: '計量管理',
       type: 'menu',
       items: [
-        { label: '溫室氣體', onClick: () => handleMenuItemClick('溫室氣體') },
-        { label: '能源', onClick: () => handleMenuItemClick('能源') },
-        { label: '水資源', onClick: () => handleMenuItemClick('水資源') },
-        { label: '廢棄物', onClick: () => handleMenuItemClick('廢棄物') },
-        { label: '其他', onClick: () => handleMenuItemClick('其他') }
+        { label: '溫室氣體', onClick: () => handleMenuItemClick('溫室氣體'), href: '/measurement/ghg' },
+        { label: '能源', onClick: () => handleMenuItemClick('能源'), href: '/measurement/energy' },
+        { label: '水資源', onClick: () => handleMenuItemClick('水資源'), href: '/measurement/water' },
+        { label: '廢棄物', onClick: () => handleMenuItemClick('廢棄物'), href: '/measurement/waste' },
+        { label: '其他', onClick: () => handleMenuItemClick('其他'), href: '/measurement/other' }
       ]
     }
   ];
@@ -89,13 +89,13 @@ export const HeadNavigation = ({ onMenuClick }) => {
             item.type === 'menu' ? (
               <HeaderMenu key={index} aria-label={item.label} menuLinkName={item.label}>
                 {item.items.map((subItem, subIndex) => (
-                  <HeaderMenuItem key={subIndex} href="#" onClick={subItem.onClick}>
+                  <HeaderMenuItem key={subIndex} href={subItem.href} onClick={subItem.onClick}>
                     {subItem.label}
                   </HeaderMenuItem>
                 ))}
               </HeaderMenu>
             ) : (
-              <HeaderMenuItem key={index} href="#" onClick={item.onClick}>
+              <HeaderMenuItem key={index} href={item.href} onClick={item.onClick}>
                 {item.label}
               </HeaderMenuItem>
             )
@@ -120,13 +120,13 @@ export const HeadNavigation = ({ onMenuClick }) => {
                 item.type === 'menu' ? (
                   <HeaderMenu key={index} aria-label={item.label} menuLinkName={item.label}>
                     {item.items.map((subItem, subIndex) => (
-                      <HeaderMenuItem key={subIndex} href="#" onClick={subItem.onClick}>
+                      <HeaderMenuItem key={subIndex} href={subItem.href} onClick={subItem.onClick}>
                         {subItem.label}
                       </HeaderMenuItem>
                     ))}
                   </HeaderMenu>
                 ) : (
-                  <HeaderMenuItem key={index} href="#" onClick={item.onClick}>
+                  <HeaderMenuItem key={index} href={item.href} onClick={item.onClick}>
                     {item.label}
                   </HeaderMenuItem>
                 )

@@ -1,0 +1,63 @@
+@use '@carbon/react';
+
+.main-content-column {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .main-content-column1 {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+.cds--tree {
+  background-color: transparent;
+
+  .cds--tree-node {
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent; // 移除懸停時的背景變化
+    }
+
+    .cds--tree-node__label {
+      background-color: transparent;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .cds--tree-node__children {
+      background-color: transparent;
+    }
+
+    &:focus,
+    &:focus-within {
+      outline: none;
+    }
+
+    .cds--tree-node__label {
+      &:focus,
+      &:focus-visible {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .cds--tree-node__toggle {
+      &:focus,
+      &:focus-visible {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .cds--tree-node__toggle {
+    pointer-events: none;
+  }
+}
